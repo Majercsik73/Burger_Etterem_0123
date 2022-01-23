@@ -37,24 +37,7 @@
             include_once("navbar.php");
         ?>
         <br />
-
-        <!-- Nav pills
-        <div>
-            <nav class="nav nav-pills navbar navbar-expand-sm bg-dark navbar-dark justify-content-center sticky-top">
-                <ul class="nav navbar nav-justified">
-                    <?php
-                        foreach($hamburgerek as $h) //végigmegyünk a termékeket tartalmazó tömbön
-                        {
-                            echo "<li class='nav-item'>
-                                    <a class='nav-link text-center text-light' data-bs-toggle='pill' href='#\\3$h->id'>$h->nev</a>
-                                </li>";
-                        }
-                    ?>
-                </ul>
-            </nav>
-        </div> -->
-
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
             <?php
