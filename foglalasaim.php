@@ -4,7 +4,7 @@
 
     //Lekérdezés
     $azon = $_SESSION['Azonosito'];
-    //echo $azon;
+    //a db-ből kinyerjük a felhasználó foglalásait
     $sql = "SELECT * FROM foglalas WHERE azon = '$azon' ORDER BY ido DESC";
     $request = $db->query($sql);
 
@@ -38,7 +38,7 @@
                 <form action= "">
                 <div>
                     <h2>Kedves <?php echo $_SESSION['Felhasznalonev']?> !</h2>
-                    <h3>Éttermünkben az alábbi foglalásai voltak korábban:</h3>
+                    <h3>Éttermünkben az alábbi foglalásai vannak / voltak:</h3>
                 </div>
                 <br />
                 <div>

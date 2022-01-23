@@ -20,25 +20,23 @@
                 $sql2 = "SELECT * FROM felhasznalo WHERE email = '$email'";
                 $result2 = $db->query($sql2);
                 
-                //belépési jelszó lekérés ellenőrzéshez
+                //email címhez tartozó belépési jelszó lekérése ellenőrzéshez
                 $sql3 = "SELECT * FROM felhasznalo WHERE pw = '$hashpw' and email = '$email'";
                 $result3 = $db->query($sql3);
 
                 //Itt megyünk végig a tényleges ellenőrzéseken
                 if($result2->num_rows < 1){
                     echo "<script>alert('A megadott email címmel nincs regisztráció!')</script>";
-                    //echo "<script>location.href = 'belepes.php'</script>";;
                 }
 
                 elseif($result3->num_rows < 1){
                     echo "<script>alert('A megadott jelszó nem megfelelő!')</script>";
-                    //echo "<script>location.href = 'belepes.php'</script>";
                 }
 
                 else{   //Ha minden rendben, beléptetjük
                     echo "<script>alert('Köszöntjük weboldalunkon!')</script><br />";
-                    //Azonosítószám és név kinyerése db-ből
-                    $sql1 = "SELECT azon, nev, pw FROM felhasznalo WHERE email = '$email' AND pw = '$hashpw'";
+                    //azonosítószám és név kinyerése db-ből
+                    $sql1 = "SELECT azon, nev FROM felhasznalo WHERE email = '$email' AND pw = '$hashpw'";
                     $result1 = $db->query($sql1);
 
                     if ($result1->num_rows > 0){
@@ -47,7 +45,6 @@
                         $nev = $row['nev'];
                         $_SESSION['Azonosito'] = $azon;
                         $_SESSION['Felhasznalonev'] = $nev;
-                        //$_SESSION['Jelszo'] = $hashpw;
                     }
                     echo "<script>location.href = 'foglalas.php'</script>";
                 }
@@ -89,11 +86,11 @@
                     
                     <div>
                         <label class="labella">E-mail cím:</label><br />
-                        <input type="email" class="bevitel" name="email" id="email" value="<?php if(isset ($_SESSION['Email'])){ echo "".$_SESSION['Email'];}?>" placeholder="az Ön email címe">
+                        <input type="email" class="bevitel" name="email" id="email" placeholder="az Ön email címe">
                     </div>
                     <div>
                         <label class="labella">Jelszó:</label><br />
-                        <input type="password" class="bevitel" name="pw1" id="pw1" value="<?php if(isset ($_SESSION['pw1'])){ echo "".$_SESSION['pw1'];}?>" placeholder="az Ön jelszava">
+                        <input type="password" class="bevitel" name="pw1" id="pw1" placeholder="az Ön jelszava">
                     </div>
                     <br />
                     <input type="submit" class="btn btn-success" value="Belépek!">

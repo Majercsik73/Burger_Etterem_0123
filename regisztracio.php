@@ -8,7 +8,6 @@
         if(isset($_POST["nev"]) && isset($_POST["lak"]) && isset($_POST["tel"]) &&
             isset($_POST["email"]) && isset($_POST["pw1"]) && isset($_POST["pw2"]))
             {
-                session_start();
                 $nev = $_POST["nev"];
                 $lak = $_POST["lak"];
                 $tel = $_POST["tel"];
@@ -77,7 +76,7 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Burger Étterem</title>
     </head>
-    <body class="container bg-dark">
+    <body class="container bg-warning">
         <header>
             <div class="headerimage"></div>
 

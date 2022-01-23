@@ -1,13 +1,6 @@
 <?php 
     session_start();
     include("dbconnect.php");
-
-    
-    //echo "Az alábbi adatokkal léptél be: <br />";
-    //echo "<pre>";
-    //print_r($_SESSION);
-    //echo "</pre>";
-
     
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {      
@@ -78,7 +71,7 @@
             <div class="ujfelhasznalo">
                 <form method="POST" action= "">
                     <div>
-                        <h2> Üdvözöljük <?php echo " ".$_SESSION['Felhasznalonev']//."  ".$_SESSION['Azonosito'] ?> !</h2>
+                        <h2> Üdvözöljük <?php echo " ".$_SESSION['Felhasznalonev'] ?> !</h2>
                         <h3> Foglalásához kérjük adja meg a vendégek számát, a dátumot és az időpontot!</h3>
                     </div>
                     <br /><label class="labella"></label><br />
