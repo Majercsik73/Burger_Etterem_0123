@@ -93,7 +93,8 @@
                     </div>
                     <br />
                     <input type="submit" class="btn btn-success" value="Belépek!">
-                    <br /><label class="labella"></label><br />
+                    <br />
+                    <br />
                     <a class="btn btn-primary" href="regisztracio.php">Regisztrálok!</a>
                 </form>
             <br />
