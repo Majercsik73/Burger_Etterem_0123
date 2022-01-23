@@ -33,7 +33,6 @@
             </div>
         </header>
 
-            
         <?php
             include_once("navbar.php");
         ?>
@@ -43,7 +42,7 @@
             <?php
                 foreach($desszertek as $d) //végigmegyünk a termékeket tartalmazó tömbön
                 {
-                    echo "<div id='$d->id' class='container tab-panel'><br>
+                    echo "<div class='container tab-panel'><br>
                           <div class='row p-2 m-3'>
                               <div class='col-sm-6 col-m-12'>
                                   <div class='text-center'>
@@ -75,7 +74,5 @@
                 <span class="text-secondary center">Burger Étterem</span>
             </div>
         </footer>
-
-
     </body>
 </html>

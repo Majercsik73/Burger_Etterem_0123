@@ -44,9 +44,7 @@
             <?php
                 foreach($hamburgerek as $h) //végigmegyünk a termékeket tartalmazó tömbön
                 {
-                    $aktiv = $h->id == 1 ? "active" : ""; //az 1es idvel lévő legyen active, szóval a string felveszi az "active" értéket ha a foreachben lévő item idje 1
-                    //utána berakjuk a classok közé, lényegében az elsőnél fogja beleírni az activeot, a többinél meg csak egy üres stringet rak be
-                    echo "<div id='$h->id' class='container tab-panel'><br>
+                    echo "<div class='container tab-panel'><br>
                           <div class='row p-2 m-3'>
                               <div class='col-sm-6 col-m-12'>
                                   <div class='text-center'>
@@ -72,14 +70,11 @@
                 }
             ?>
         </div>
-
         <footer class="page-footer text-center wow fadeIn">
             <div class="py-5 bg-dark">
                 <span class="footer-copyright text-secondary center" id="copyright">© 2022 Copyright:</span>
                 <span class="text-secondary center">Burger Étterem</span>
             </div>
         </footer>
-
-
     </body>
 </html>

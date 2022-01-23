@@ -44,7 +44,7 @@
             <?php
                 foreach($italok as $i) //végigmegyünk a termékeket tartalmazó tömbön
                 {
-                    echo "<div id='$i->id' class='container tab-panel'><br>
+                    echo "<div class='container tab-panel'><br>
                           <div class='row p-2 m-3'>
                               <div class='col-sm-6 col-m-12'>
                                   <div class='text-center'>
