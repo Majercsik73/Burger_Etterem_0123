@@ -1,11 +1,14 @@
 
 <?php
+    session_start();
     include("dbconnect.php");
-    
+    if(isset($_SESSION["Azonosito"]))
+    {
+        header("Location: ./foglalas.php");
+    }
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        session_start();
         if(isset($_POST["email"]) && !empty($_POST["email"]) &&
             isset($_POST["pw1"]) && !empty($_POST["pw1"]))
             {

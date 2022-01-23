@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once "./Termek.php";
     $hamburgerek = []; //ebbe lesznek a Termek classú itemek
     $mysqlConn = new mysqli("localhost","root","","burgeretterem"); //példányosítunk egy mysqli classt
@@ -37,7 +38,7 @@
             include_once("navbar.php");
         ?>
         <br />
-        
+
         <!-- Tab panes -->
         <div class="tab-content">
             <?php

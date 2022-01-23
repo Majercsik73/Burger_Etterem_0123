@@ -1,5 +1,6 @@
 
 <?php
+    session_start();
     include_once "./Termek.php";
     $italok = []; //ebbe lesznek a Termek classú itemek
     $mysqlConn = new mysqli("localhost","root","","burgeretterem"); //példányosítunk egy mysqli classt

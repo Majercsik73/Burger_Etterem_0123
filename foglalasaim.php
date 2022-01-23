@@ -1,6 +1,6 @@
 <?php 
-    include("dbconnect.php");
     session_start();
+    include("dbconnect.php");
 
     //Lekérdezés
     $azon = $_SESSION['Azonosito'];

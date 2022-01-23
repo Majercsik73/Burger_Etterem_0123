@@ -1,7 +1,7 @@
 <?php 
+    session_start();
     include("dbconnect.php");
 
-    session_start();
     
     //echo "Az alábbi adatokkal léptél be: <br />";
     //echo "<pre>";
@@ -40,6 +40,12 @@
                     header("Refresh:0");  // Ne ragadjonak be az adatok!!!!
                     echo "<script>location.href='foglalas.php'</script>";
                 }
+            }
+            //kijelentkezésnél is elküldődik a form, de a post arraybe benne lesz a kilépés gomb is
+            if(isset($_POST["kilepes"]))
+            {
+                session_unset();
+                header("Location: index.php");
             }
     }   
     
@@ -96,6 +102,10 @@
                     <div>
                         <label class="labella">Időpont:</label><br />
                         <select class="bevitel" name="idopont">
+                            <option>12:00:00</option>
+                            <option>13:00:00</option>
+                            <option>14:00:00</option>
+                            <option>15:00:00</option>
                             <option>16:00:00</option>
                             <option>17:00:00</option>
                             <option>18:00:00</option>
@@ -106,14 +116,14 @@
                     </div>
                     <br />
                     <input type="submit" class="btn btn-success" value="Foglalom!">
-                    <br /><label class="labella"></label><br />
+                    <br /><br />
                     <a class="btn btn-primary" href="foglalasaim.php">Előző foglalásaim</a>
-                    <br /><label class="labella"></label><br />
-                    <a class="btn btn-danger" href="index.php">Kilépés</a>
+                    <br /><br />
+                    <input type="submit" name="kilepes" class="btn btn-danger" value="Kilépés">
                 </form>
             </div>
         </div>
-        <br />
+        <br/>
         <footer class="page-footer text-center wow fadeIn">
             <div class="py-3 bg-dark">
                 <span class="footer-copyright text-secondary center" id="copyright">© 2022 Copyright:</span>
