@@ -1,0 +1,160 @@
+/* 
+body {
+    background-color: rgba(44, 54, 63, 0.90);
+    background-color: black;
+} 
+*/
+
+.headerimage
+{
+    width: 100%;
+    height: 20rem;
+    background-image: url("../images/hatter/Livepool-St-restaurant14-optimised.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.nav-link {
+    font-size: x-large;
+    color: grey;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    /* font-size: x-large; */
+    
+    font-weight: bold;
+    color: aliceblue;
+    /* text-decoration: none; */
+}
+
+.nav-link:active {
+    color: aliceblue;
+    text-shadow: 2px;
+    text-decoration: none;
+}
+
+/* .nav-link:visited {
+    font-weight: bold;
+    color: grey;
+    text-shadow: 5px;
+    text-decoration: none;
+} */
+
+/* ul {
+    color: white;
+} */
+
+p {
+    font-size: large;
+    color: aliceblue;
+    text-align: left;
+    line-height: 130%;
+    margin: 2rem;
+    /* padding-left: 2rem;
+    padding-right: 2rem; */
+    /* color: white; */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 23px;
+}
+
+/* img {
+    width: 100%;
+    height: auto;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    object-fit: cover;
+} */
+
+/* img {
+    object-fit: cover;
+} */
+
+
+.mainImg {
+    width: 50%;
+    height: 50%;
+    margin: 15px;
+    padding: 15px;
+}
+
+
+/*_______________________________________________________*/
+/* footer */
+
+/* #left {
+    display: inline-block;
+    float: left;
+    padding-left: 30px;
+    font-size: 23px;
+} */
+
+.center {
+    display: inline-block;
+    font-size: 23px;
+}
+
+/* #right {
+    display: inline-block;
+    float: right;
+    padding-right: 30px;
+    font-size: 23px;
+} */
+
+#copyright {
+    font-style: italic;
+    margin-right: 15px;
+}
+
+.formcontent
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:1em;
+}
+
+.forminput
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 20%;
+    padding: 1em;
+}
+h2 , h3{
+    color: white;
+}
+.ujfelhasznalo{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.bevitel{
+    height: 40px;
+    width: 320px;
+    border-radius: 5px;
+    border-color: transparent;
+    padding: 6px 12px 6px 12px;
+    background-color: rgb(182, 181, 181);
+    /*color: white;*/
+    font-size: 20px;
+}
+.labella{
+    margin-top: 8px;
+    font-size: 20px;
+    /*font-weight: bold;*/
+    color: white;
+}
+
+@media screen and (max-width: 510px) {
+    .headerimage
+    {
+        background-size: contain!important;
+    }
+}
+
