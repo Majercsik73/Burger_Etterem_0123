@@ -21,7 +21,7 @@
                 $result2 = $db->query($sql2);
                 
                 //belépési jelszó lekérés ellenőrzéshez
-                $sql3 = "SELECT * FROM felhasznalo WHERE pw = '$hashpw'";
+                $sql3 = "SELECT * FROM felhasznalo WHERE pw = '$hashpw' and email = '$email'";
                 $result3 = $db->query($sql3);
 
                 //Itt megyünk végig a tényleges ellenőrzéseken
@@ -49,8 +49,9 @@
                         $_SESSION['Felhasznalonev'] = $nev;
                         //$_SESSION['Jelszo'] = $hashpw;
                     }
+                    echo "<script>location.href = 'foglalas.php'</script>";
                 }
-                echo "<script>location.href = 'foglalas.php'</script>";
+                
             }
     }        
 
