@@ -45,6 +45,7 @@
                     <table class="table table-dark table-striped">
                         <thead >
                             <tr>
+                                <th>Foglalás azonosító</th>
                                 <th>Vendégek száma</th>
                                 <th>Dátum</th>
                                 <th>Időpont</th>
@@ -56,6 +57,7 @@
                                 while ($sor = $request->fetch_assoc()){
                                     echo
                                     "<tr>
+                                        <td>".$sor["fazon"]."</td>
                                         <td>".$sor["szemelydb"]."</td>
                                         <td>".$sor["datum"]."</td>
                                         <td>".$sor["idopont"]."</td>
