@@ -13,6 +13,16 @@
                 $szemelydb = $_POST["szemelydb"];
                 $datum = $_POST["datum"];
                 $idopont = $_POST["idopont"];
+
+                $date1 = date_create($datum);
+                $t = time();
+                $date2 = date("Y-m-d",$t);
+                $diff = date_diff($date1,$date2);
+                echo $diff;
+                if($diff < 0){
+                    echo "<script>alert('Az Ön által megadott időpont korábbi a mai napnál!\nKérjük adjon meg egy másik időpontot!')</script>";
+                    echo "<script>location.href='foglalas.php'</script>";
+                }
                 
                 //dátum és időpont lekérése ellenőrzéshez
                 $sql1 = "SELECT idopont FROM foglalas WHERE datum = '$datum' AND idopont = '$idopont'";
@@ -55,7 +65,7 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Burger Étterem</title>
     </head>
-    <body class="container bg-dark">
+    <body class="container bg-warning">
         <header>
             <div class="headerimage"></div>
 
