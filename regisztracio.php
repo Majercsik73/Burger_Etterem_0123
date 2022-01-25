@@ -76,7 +76,7 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Burger Étterem</title>
     </head>
-    <body class="container bg-warning">
+    <body class="container bg-dark">
         <header>
             <div class="headerimage"></div>
 
