@@ -76,7 +76,7 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Burger Étterem</title>
     </head>
-    <body class="container bg-warning">
+    <body class="container bg-dark">
         <header>
             <div class="headerimage"></div>
 
@@ -95,7 +95,7 @@
                         <h2>Regisztráció<h2>
                     </div>
                     <div>
-                        <label class="labella">Név:</label><br />
+                        <label class="labella">Felhasználónév:</label><br />
                         <input type="text"  class="bevitel" name="nev" id="nev" value="<?php if(isset ($_SESSION['Felhasznalonev'])){ echo "".$_SESSION['Felhasznalonev'];}?>" placeholder="felhasználónév">
                     </div>
                     <div>
@@ -120,10 +120,10 @@
                     </div>
                     <br />
                     <input type="submit" class="btn btn-success" value="Regisztrálok!">
-                    <br /><label class="labella"></label><br />
+                    <br /><br />
                     <a class="btn btn-danger" href="index.php">Mégsem!</a>
                 </form>
-            <br />
+                <br />
             </div>
         </div>
         <br />

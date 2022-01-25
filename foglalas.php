@@ -74,7 +74,7 @@
                         <h2> Üdvözöljük <?php echo " ".$_SESSION['Felhasznalonev'] ?> !</h2>
                         <h3> Foglalásához kérjük adja meg a vendégek számát, a dátumot és az időpontot!</h3>
                     </div>
-                    <br /><label class="labella"></label><br />
+                    <br /><br />
                     <div>
                         <label class="labella">Vendégek száma:</label><br />
                         <select class="bevitel" name="szemelydb">

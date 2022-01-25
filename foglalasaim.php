@@ -8,6 +8,7 @@
     $sql = "SELECT * FROM foglalas WHERE azon = '$azon' ORDER BY ido DESC";
     $request = $db->query($sql);
 
+    
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Burger Étterem</title>
     </head>
-    <body class="container bg-dark">
+    <body class="container bg-warning">
         <header>
             <div class="headerimage"></div>
 
@@ -35,43 +36,41 @@
         <br />
         <div class="container">
             <div class="ujfelhasznalo">
-                <form action= "">
-                <div>
-                    <h2>Kedves <?php echo $_SESSION['Felhasznalonev']?> !</h2>
-                    <h3>Éttermünkben az alábbi foglalásai vannak / voltak:</h3>
-                </div>
-                <br />
-                <div>
-                    <table class="table table-dark table-striped">
-                        <thead >
-                            <tr>
-                                <th>Foglalás azonosító</th>
-                                <th>Vendégek száma</th>
-                                <th>Dátum</th>
-                                <th>Időpont</th>
-                                <th>Foglalás ideje</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                while ($sor = $request->fetch_assoc()){
-                                    echo
-                                    "<tr>
-                                        <td>".$sor["fazon"]."</td>
-                                        <td>".$sor["szemelydb"]."</td>
-                                        <td>".$sor["datum"]."</td>
-                                        <td>".$sor["idopont"]."</td>
-                                        <td>".$sor["ido"]."</td>
-                                    </tr>";
-                                }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-                <br /><label class="labella"></label><br />
-                <div>
-                    <a class="btn btn-danger" href="foglalas.php">Vissza a foglalásokhoz</a>
-                </div>
+                <form action= "" >
+                    <div>
+                        <h2>Kedves <?php echo $_SESSION['Felhasznalonev']?> !</h2>
+                        <h3>Éttermünkben az alábbi foglalásai vannak / voltak:</h3>
+                    </div>
+                    <br />
+                    <div>
+                        <table class="table table-dark table-striped">
+                            <thead >
+                                <tr>
+                                    <th>Foglalás azonosító</th>
+                                    <th>Vendégek száma</th>
+                                    <th>Dátum</th>
+                                    <th>Időpont</th>
+                                    <th>Foglalás ideje</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    while ($sor = $request->fetch_assoc()){
+                                        echo
+                                        "<tr>
+                                            <td>".$sor["fazon"]."</td>
+                                            <td>".$sor["szemelydb"]."</td>
+                                            <td>".$sor["datum"]."</td>
+                                            <td>".$sor["idopont"]."</td>
+                                            <td>".$sor["ido"]."</td>
+                                        </tr>";
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <a class="btn btn-success" href="foglalas.php">Vissza az asztalfoglaláshoz</a>
                 </form>
             </div>
         </div>

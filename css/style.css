@@ -151,6 +151,9 @@ h2 , h3{
     color: white;
 }
 
+.hidden{
+    display: none;
+}
 @media screen and (max-width: 510px) {
     .headerimage
     {
