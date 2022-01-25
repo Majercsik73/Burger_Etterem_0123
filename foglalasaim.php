@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Burger Étterem</title>
     </head>
-    <body class="container bg-warning">
+    <body class="container bg-dark">
         <header>
             <div class="headerimage"></div>
 
@@ -51,6 +51,7 @@
                 <table class="table table-dark table-striped">
                     <thead >
                         <tr>
+                            <th>Foglalás azonosító</th>
                             <th>Vendégek száma</th>
                             <th>Dátum</th>
                             <th>Időpont</th>
@@ -63,15 +64,21 @@
                             while ($sor = $request->fetch_assoc()){
                                 echo
                                 "<tr>
+                                    <td>".$sor["fazon"]."</td>    
                                     <td>".$sor["szemelydb"]."</td>
                                     <td>".$sor["datum"]."</td>
                                     <td>".$sor["idopont"]."</td>
                                     <td>".$sor["ido"]."</td>
                                     <td>
-                                        <form method='POST'>
-                                        <input type='text' name='fazon' style='display: none;'value=".$sor["fazon"].">
-                                        <input type='submit' class='btn btn-danger' value='Törlés'>
-                                        </form>
+                                        <form method='POST' onsubmit='return megerosites()'>
+                                        <input type='text' name='fazon' id='fazon' style='display: none;' value=".$sor["fazon"].">";
+                                        if ($sor["megjelent"] == 0){
+                                            echo"<input type='submit' class='btn btn-danger' value='Törlés'>";
+                                        }
+                                        else{
+                                            echo"<input type='submit' class='btn btn-danger' value='Törlés' disabled>";
+                                        }
+                                        echo"</form>
                                     </td>
                                 </tr>";
                             }
@@ -82,7 +89,7 @@
                 <br />
                 <br />
             <div class="ujfelhasznalo">
-                <a class="btn btn-danger" href="foglalas.php">Vissza a foglalásokhoz</a>
+                <a class="btn btn-success" href="foglalas.php">Vissza a foglalásokhoz</a>
             </div>
         </div>
         <br />
@@ -94,3 +101,14 @@
         </footer>
     </body>
 </html>
+<script>
+    function megerosites(){
+        if(confirm("Valóban törölni kívánja a foglalását?")){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+</script>
